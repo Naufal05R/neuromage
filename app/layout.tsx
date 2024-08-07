@@ -21,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("font-IBM_PLEX_SANS antialiased", IBM_PLEX_SANS.variable)}>{children}</body>
+      <body
+        className={cn("font-IBM_PLEX_SANS antialiased", IBM_PLEX_SANS.variable)}
+      >
+        {children}
+      </body>
     </html>
   );
 }
