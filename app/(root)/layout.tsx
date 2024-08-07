@@ -1,6 +1,6 @@
 import React from "react";
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="root">
       <div className="root-container">
@@ -10,4 +10,4 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default RootLayout;
+export default MainLayout;
