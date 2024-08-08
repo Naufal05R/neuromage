@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { navLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 
-const NavLink = ({ start, end }: { start: number; end?: number }) => {
+const NavLink = ({ start, end }: { start?: number; end?: number }) => {
   const pathname = usePathname();
 
   return navLinks.slice(start, end).map((link) => {
