@@ -26,7 +26,7 @@ const NavLink = ({ start, end }: { start?: number; end?: number }) => {
             alt="logo"
             width={24}
             height={24}
-            className={cn("max-xs:hidden h-6 w-6", {
+            className={cn("max-3xs:hidden h-6 w-6", {
               "brightness-200": isActive,
             })}
           />
