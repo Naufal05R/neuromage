@@ -26,7 +26,9 @@ const NavLink = ({ start, end }: { start?: number; end?: number }) => {
             alt="logo"
             width={24}
             height={24}
-            className={cn("h-6 w-6", { "brightness-200": isActive })}
+            className={cn("max-xs:hidden h-6 w-6", {
+              "brightness-200": isActive,
+            })}
           />
           <span className="line-clamp-1 text-wrap">{link.label}</span>
         </Link>
