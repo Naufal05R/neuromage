@@ -334,7 +334,7 @@
   }
 
   .sidebar-link {
-    @apply p-16-semibold flex size-full gap-4 p-4;
+    @apply font-semibold flex size-full gap-4 py-4 px-6 xs:pl-4;
   }
 
   /* TransformationForm Component */
