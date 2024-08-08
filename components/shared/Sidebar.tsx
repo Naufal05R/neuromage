@@ -12,7 +12,7 @@ import { Button } from "../ui/button";
 const NavLink = ({ start, end }: { start: number; end?: number }) => {
   const pathname = usePathname();
 
-  return navLinks.slice(start, end).map((link, index) => {
+  return navLinks.slice(start, end).map((link) => {
     const isActive = link.route === pathname;
 
     return (
