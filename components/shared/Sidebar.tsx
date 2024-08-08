@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { navLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
@@ -53,6 +53,10 @@ const Sidebar = () => {
                   </li>
                 );
               })}
+
+              <li className="flex-center cursor-pointer gap-2 p-4">
+                <UserButton afterSwitchSessionUrl="/" showName />
+              </li>
             </ul>
           </SignedIn>
 
