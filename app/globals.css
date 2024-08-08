@@ -330,11 +330,11 @@
   }
 
   .sidebar-nav_element {
-    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-purple-100 hover:shadow-inner;
+    @apply flex-center font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-purple-100 hover:shadow-inner;
   }
 
   .sidebar-link {
-    @apply p-16-semibold flex size-full gap-4 p-4;
+    @apply font-semibold flex size-full gap-4 p-4 max-3xs:pl-6 pr-6;
   }
 
   /* TransformationForm Component */
