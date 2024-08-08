@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -34,3 +34,5 @@ const NavLink = ({ start, end }: { start: number; end?: number }) => {
     );
   });
 };
+
+export default NavLink;
