@@ -14,9 +14,7 @@ if (!cached) {
 }
 
 export const connectToDatabase = async () => {
-  if (cached.conn) {
-    return cached.conn;
-  }
+  if (cached.conn) return cached.conn;
 
   if (!MONGODB_URL) throw new Error("Missing MONGODB_URL");
 
@@ -26,4 +24,8 @@ export const connectToDatabase = async () => {
       dbName: "neuromage",
       bufferCommands: false,
     });
+
+  cached.conn = await cached.promise;
+
+  return cached.conn;
 };
