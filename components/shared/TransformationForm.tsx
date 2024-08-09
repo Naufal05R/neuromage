@@ -18,7 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { defaultValues } from "@/constants";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   title: z.string(),
   aspectRatio: z.string().optional(),
   color: z.string().optional(),
