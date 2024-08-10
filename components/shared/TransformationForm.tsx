@@ -91,7 +91,19 @@ const TransformationForm = ({
     value: string,
     type: string,
     onChangeField: (value: string) => void,
-  ) => {};
+  ) => {
+    debounce(() => {
+      setNewTransformation((prevState: any) => ({
+        ...prevState,
+        [type]: {
+          ...prevState?.[type],
+          [fieldName === 'prompt' ? 'prompt' : 'to']: value
+        }
+      }))
+
+      return onChangeField(value);
+    }, 1000)
+  };
 
   const onTransformHandler = async () => {};
 
