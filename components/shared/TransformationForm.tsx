@@ -214,14 +214,14 @@ const TransformationForm = ({
             disabled={isTransforming || newTransformation === null}
             onClick={onTransformHandler}
           >
-            Submit
+            {isTransforming ? "Transforming..." : "Apply Transformation"}
           </Button>
           <Button
             type="submit"
             className="submit-button capitalize"
             disabled={isSubmitting}
           >
-            Submit
+            {isSubmitting ? "Submitting..." : "Save Image"}
           </Button>
         </div>
       </form>
