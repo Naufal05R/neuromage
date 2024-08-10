@@ -21,7 +21,7 @@ import {
   transformationTypes,
 } from "@/constants";
 import { CustomField } from "./CustomField";
-import { AspectRatioKey, debounce } from "@/lib/utils";
+import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { Button } from "../ui/button";
 
 export const formSchema = z.object({
@@ -47,6 +47,7 @@ const TransformationForm = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isTransforming, setIsTransforming] = useState(false);
   const [transformationConfig, setTransformationConfig] = useState(config);
+  const [isPending, startTransition] = useTransition();
 
   const initialValues =
     data && action === "Update"
@@ -73,13 +74,13 @@ const TransformationForm = ({
     onChangeField: (value: string) => void,
   ) => {
     const imageSize = aspectRatioOptions[value as AspectRatioKey];
-    
+
     setImage((prevState: any) => ({
       ...prevState,
       aspectRatio: imageSize.aspectRatio,
       width: imageSize.width,
-      height: imageSize.height
-    }))
+      height: imageSize.height,
+    }));
 
     setNewTransformation(transformationType.config);
 
@@ -97,15 +98,28 @@ const TransformationForm = ({
         ...prevState,
         [type]: {
           ...prevState?.[type],
-          [fieldName === 'prompt' ? 'prompt' : 'to']: value
-        }
-      }))
+          [fieldName === "prompt" ? "prompt" : "to"]: value,
+        },
+      }));
 
       return onChangeField(value);
-    }, 1000)
+    }, 1000);
   };
 
-  const onTransformHandler = async () => {};
+  // TODO: Return to updateCredits
+  const onTransformHandler = async () => {
+    setIsTransforming(true);
+
+    setTransformationConfig(
+      deepMergeObjects(newTransformation, transformationConfig),
+    );
+
+    setNewTransformation(null);
+
+    startTransition(async () => {
+      // await updateCredits(userId, creditFee);
+    })
+  };
 
   return (
     <Form {...form}>
