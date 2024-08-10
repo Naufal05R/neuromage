@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -21,7 +21,7 @@ import {
   transformationTypes,
 } from "@/constants";
 import { CustomField } from "./CustomField";
-import { AspectRatioKey } from "@/lib/utils";
+import { AspectRatioKey, debounce } from "@/lib/utils";
 import { Button } from "../ui/button";
 
 export const formSchema = z.object({
@@ -40,7 +40,7 @@ const TransformationForm = ({
   creditBalance,
   config = null,
 }: TransformationFormProps) => {
-  const transformtionType = transformationTypes[type];
+  const transformationType = transformationTypes[type];
   const [image, setImage] = useState(data);
   const [newTransformation, setNewTransformation] =
     useState<Transformations | null>(null);
@@ -71,7 +71,20 @@ const TransformationForm = ({
   const onSelectFieldHandler = (
     value: string,
     onChangeField: (value: string) => void,
-  ) => {};
+  ) => {
+    const imageSize = aspectRatioOptions[value as AspectRatioKey];
+    
+    setImage((prevState: any) => ({
+      ...prevState,
+      aspectRatio: imageSize.aspectRatio,
+      width: imageSize.width,
+      height: imageSize.height
+    }))
+
+    setNewTransformation(transformationType.config);
+
+    return onChangeField(value);
+  };
 
   const onInputChangeHandler = (
     fieldName: string,
@@ -80,7 +93,7 @@ const TransformationForm = ({
     onChangeField: (value: string) => void,
   ) => {};
 
-  const onTransformHandler = () => {};
+  const onTransformHandler = async () => {};
 
   return (
     <Form {...form}>
