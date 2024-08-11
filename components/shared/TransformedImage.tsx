@@ -1,3 +1,6 @@
+import { dataUrl, getImageSize } from "@/lib/utils";
+import { CldImage } from "next-cloudinary";
+import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React from "react";
 
@@ -31,7 +34,19 @@ const TransformedImage = ({
       </div>
 
       {image?.publicId && transformationConfig ? (
-        <div className="relative"></div>
+        <div className="relative">
+          <CldImage
+            width={getImageSize(type, image, "width")}
+            height={getImageSize(type, image, "height")}
+            src={image?.publicId}
+            alt={image.title}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            placeholder={dataUrl as PlaceholderValue}
+            className="transformed-image"
+            onLoad={() => {}}
+            onError={() => {}}
+          />
+        </div>
       ) : (
         <div className="transformed-placeholder">Transformed Image</div>
       )}
