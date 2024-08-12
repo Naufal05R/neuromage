@@ -134,6 +134,8 @@ const TransformationForm = ({
         }
       }
     }
+
+    setIsSubmitting(false);
   }
 
   const onSelectFieldHandler = (
