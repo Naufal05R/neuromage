@@ -96,6 +96,24 @@ const TransformationForm = ({
         prompt: values.prompt,
         color: values.color,
       };
+      
+      if (action === "Add") {
+        try {
+          const newImage = await addImage({
+            image: imageData,
+            userId,
+            path: "/",
+          });
+
+          if (newImage) {
+            form.reset();
+            setImage(data);
+            router.push(`/transformations/${newImage._id}`);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
     }
   }
 
