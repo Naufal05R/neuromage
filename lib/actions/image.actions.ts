@@ -5,6 +5,7 @@ import Image from "../database/models/image.model";
 import User from "../database/models/user.model";
 import { connectToDatabase } from "../database/mongoose";
 import { handleError } from "../utils";
+import { redirect } from "next/navigation";
 
 const populateUser = (query: any) =>
   query.populate({
@@ -56,5 +57,17 @@ export async function updateImage({ image, userId, path }: UpdateImageParams) {
     return JSON.parse(JSON.stringify(updatedImage));
   } catch (error) {
     handleError(error);
+  }
+}
+
+// DELETE IMAGE
+export async function deleteImage(imageId: string) {
+  try {
+    await connectToDatabase();
+    await Image.findByIdAndDelete(imageId);
+  } catch (error) {
+    handleError(error);
+  } finally {
+    redirect("/");
   }
 }
