@@ -214,7 +214,6 @@ const TransformationForm = ({
           <CustomField
             control={form.control}
             name="publicId"
-            formLabel="Upload Image"
             className="flex size-full flex-col"
             render={({ field }) => (
               <MediaUploader
