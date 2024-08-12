@@ -76,7 +76,7 @@ const TransformationForm = ({
     setIsSubmitting(true);
 
     if (data || image) {
-      const transformationUrl = getCldImageUrl({
+      const transformationURL = getCldImageUrl({
         src: image?.publicId,
         height: image?.height,
         width: image?.width,
@@ -90,8 +90,8 @@ const TransformationForm = ({
         width: image?.width,
         height: image?.height,
         config: transformationConfig,
-        secureURL: image?.secureUrl,
-        transformationURL: transformationUrl,
+        secureURL: image?.secureURL,
+        transformationURL: transformationURL,
         aspectRatio: values.aspectRatio,
         prompt: values.prompt,
         color: values.color,
