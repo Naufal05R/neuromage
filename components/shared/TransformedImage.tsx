@@ -15,7 +15,7 @@ const TransformedImage = ({
   setIsTransforming,
   hasDownload = false,
 }: TransformedImageProps) => {
-  const downloadHandler = () => {};
+  const downloadHandler = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {};
 
   return (
     <div className="flex flex-col gap-4">
