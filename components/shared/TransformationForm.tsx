@@ -98,7 +98,7 @@ const TransformationForm = ({
         prompt: values.prompt,
         color: values.color,
       };
-      
+
       if (action === "Add") {
         try {
           const newImage = await addImage({
@@ -116,7 +116,7 @@ const TransformationForm = ({
           console.log(error);
         }
       }
-      
+
       if (action === "Update") {
         try {
           const updatedImage = await updateImage({
@@ -172,9 +172,9 @@ const TransformationForm = ({
           [fieldName === "prompt" ? "prompt" : "to"]: value,
         },
       }));
+    }, 1000)();
 
-      return onChangeField(value);
-    }, 1000);
+    return onChangeField(value);
   };
 
   // TODO: update creditFee to something else
@@ -196,7 +196,7 @@ const TransformationForm = ({
     if (image && (type === "restore" || type === "removeBackground")) {
       setNewTransformation(transformationType.config);
     }
-  }, [image, transformationType.config, type])
+  }, [image, transformationType.config, type]);
 
   return (
     <Form {...form}>
