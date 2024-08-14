@@ -2,11 +2,11 @@ import { SignedIn, auth } from "@clerk/nextjs";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
+import Checkout from "@/components/shared/Checkout";
 import Header from "@/components/shared/Header";
 import { Button } from "@/components/ui/button";
 import { plans } from "@/constants";
 import { getUserById } from "@/lib/actions/user.actions";
-// import Checkout from "@/components/shared/Checkout";
 
 const Credits = async () => {
   const { userId } = auth();
@@ -61,12 +61,12 @@ const Credits = async () => {
                 </Button>
               ) : (
                 <SignedIn>
-                  {/* <Checkout
+                  <Checkout
                     plan={plan.name}
                     amount={plan.price}
                     credits={plan.credits}
                     buyerId={user._id}
-                  /> */}
+                  />
                 </SignedIn>
               )}
             </li>
