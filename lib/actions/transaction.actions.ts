@@ -22,14 +22,18 @@ export async function checkoutCredits(transaction: CheckoutTransactionParams) {
       },
     ],
     metadata: {
-        plan: transaction.plan,
-        credits: transaction.credits,
-        buyerId: transaction.buyerId,
+      plan: transaction.plan,
+      credits: transaction.credits,
+      buyerId: transaction.buyerId,
     },
-    mode: 'payment',
+    mode: "payment",
     success_url: `${process.env.NECT_PUBLIC_SERVER_URL}/profile`,
     cancel_url: `${process.env.NECT_PUBLIC_SERVER_URL}/`,
   });
 
   redirect(session.url!);
+}
+
+export async function createTransaction(transaction: CreateTransactionParams) {
+  
 }
