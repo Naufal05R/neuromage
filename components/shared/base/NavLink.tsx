@@ -17,7 +17,7 @@ const NavLink = ({ start, end }: { start?: number; end?: number }) => {
         key={link.route}
         className={cn(
           "sidebar-nav_element group",
-          isActive ? "bg-purple-gradient text-white" : "text-gray-700",
+          isActive ? "bg-gradient-sky-blue text-white" : "text-gray-700",
         )}
       >
         <Link className="sidebar-link" href={link.route}>
@@ -26,7 +26,7 @@ const NavLink = ({ start, end }: { start?: number; end?: number }) => {
             alt="logo"
             width={24}
             height={24}
-            className={cn("max-3xs:hidden h-6 w-6", {
+            className={cn("h-6 w-6 max-3xs:hidden", {
               "brightness-200": isActive,
             })}
           />
