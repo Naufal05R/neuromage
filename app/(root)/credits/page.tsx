@@ -28,9 +28,7 @@ const Credits = async () => {
             <li key={plan.name} className="credits-item">
               <div className="flex-center flex-col gap-3">
                 <Image src={plan.icon} alt="check" width={50} height={50} />
-                <p className="p-20-semibold mt-2 text-blue-500">
-                  {plan.name}
-                </p>
+                <p className="p-20-semibold mt-2 text-blue-500">{plan.name}</p>
                 <p className="h1-semibold text-dark-600">${plan.price}</p>
                 <p className="p-16-regular">{plan.credits} Credits</p>
               </div>
@@ -56,7 +54,10 @@ const Credits = async () => {
               </ul>
 
               {plan.name === "Free" ? (
-                <Button variant="outline" className="credits-btn">
+                <Button
+                  variant="outline"
+                  className="w-full rounded-full bg-blue-100 bg-cover text-blue-500 hover:text-blue-500"
+                >
                   Free Consumable
                 </Button>
               ) : (
