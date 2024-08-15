@@ -330,7 +330,7 @@
   }
 
   .sidebar-nav_element {
-    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-blue-50 hover:shadow-inner;
+    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover transition-[background-color] hover:bg-blue-50 hover:shadow-inner;
   }
 
   .sidebar-link {
