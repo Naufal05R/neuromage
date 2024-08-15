@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   darkMode: ["class"],
@@ -99,7 +100,25 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    plugin(({ theme, addUtilities }) => {
+      const linearUtilities: any = {};
+      const colors = theme("colors");
+      for (const firstColor in colors) {
+        if (typeof colors[firstColor] === "object") {
+          const color1 = colors[firstColor]["300"];
+          for (const secondColor in colors) {
+            const color2 = colors[secondColor]["700"];
+            linearUtilities[`.bg-gradient-${firstColor}-${secondColor}`] = {
+              backgroundImage: `linear-gradient(to bottom right, ${color1} 0%, ${color2} 100%)`,
+            };
+          }
+        }
+      }
+      addUtilities(linearUtilities);
+    }),
+    require("tailwindcss-animate"),
+  ],
 };
 
 export default config;
