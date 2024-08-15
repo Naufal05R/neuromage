@@ -56,7 +56,7 @@ const Credits = async () => {
               {plan.name === "Free" ? (
                 <Button
                   variant="outline"
-                  className="w-full rounded-full bg-blue-100 bg-cover text-blue-500 hover:text-blue-500"
+                  className="w-full rounded-full bg-blue-100 bg-cover text-blue-500 hover:text-blue-500 hover:bg-blue-50"
                 >
                   Free Consumable
                 </Button>
