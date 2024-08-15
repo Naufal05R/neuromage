@@ -77,7 +77,7 @@
 }
 
 .auth {
-  @apply flex-center min-h-screen w-full bg-purple-100
+  @apply flex-center min-h-screen w-full bg-blue-100
 }
 
 .root {
@@ -201,7 +201,7 @@
   }
 
   .select-item {
-    @apply py-3 cursor-pointer hover:bg-purple-100;
+    @apply py-3 cursor-pointer hover:bg-blue-100;
   }
 
   .IconButton {
@@ -239,7 +239,7 @@
   }
 
   .credits-btn {
-    @apply w-full rounded-full bg-purple-100 bg-cover text-purple-500 hover:text-purple-500;
+    @apply w-full rounded-full bg-blue-100 bg-cover text-purple-500 hover:text-purple-500;
   }
 
   /* Profile Page */
@@ -261,7 +261,7 @@
   }
 
   .transformation-original_image {
-    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-purple-100/20 object-cover p-2;
+    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-blue-100/20 object-cover p-2;
   }
 
   /* Collection Component */
@@ -287,11 +287,11 @@
 
   /* MediaUploader Component */
   .media-uploader_cldImage {
-    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-purple-100/20 object-cover p-2;
+    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-blue-100/20 object-cover p-2;
   }
 
   .media-uploader_cta {
-    @apply flex-center flex h-72 cursor-pointer flex-col gap-5 rounded-[16px] border border-dashed bg-purple-100/20 shadow-inner;
+    @apply flex-center flex h-72 cursor-pointer flex-col gap-5 rounded-[16px] border border-dashed bg-blue-100/20 shadow-inner;
   }
 
   .media-uploader_cta-image {
@@ -330,7 +330,7 @@
   }
 
   .sidebar-nav_element {
-    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-purple-100 hover:shadow-inner;
+    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-blue-100 hover:shadow-inner;
   }
 
   .sidebar-link {
@@ -352,7 +352,7 @@
   }
 
   .transformed-image {
-    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-purple-100/20 object-cover p-2;
+    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-blue-100/20 object-cover p-2;
   }
 
   .transforming-loader {
@@ -360,7 +360,7 @@
   }
 
   .transformed-placeholder {
-    @apply flex-center p-14-medium h-full min-h-72 flex-col gap-5 rounded-[16px] border border-dashed bg-purple-100/20 shadow-inner;
+    @apply flex-center p-14-medium h-full min-h-72 flex-col gap-5 rounded-[16px] border border-dashed bg-blue-100/20 shadow-inner;
   }
 }
 
