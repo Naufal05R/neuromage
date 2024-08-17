@@ -2,20 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams, useRouter } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 
-import {
-  Pagination,
-  PaginationContent,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 import { transformationTypes } from "@/constants";
 import { ImageInterface } from "@/lib/database/models/image.model";
-import { formUrlQuery } from "@/lib/utils";
-
-import { Button } from "../ui/button";
 
 import { Search } from "./Search";
 
