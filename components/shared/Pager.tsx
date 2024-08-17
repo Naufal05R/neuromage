@@ -12,10 +12,10 @@ import {
 import { Button } from "../ui/button";
 
 const Pager = ({
-  currentPage: page,
+  page: page,
   totalPages,
 }: {
-  currentPage: string | number;
+  page: string | number;
   totalPages: number;
 }) => {
   const router = useRouter();
