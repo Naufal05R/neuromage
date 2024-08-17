@@ -6,6 +6,7 @@ import { transformationTypes } from "@/constants";
 import { ImageInterface } from "@/lib/database/models/image.model";
 
 import { Search } from "./Search";
+import Pager from "./Pager";
 
 export const Collection = ({
   hasSearch = false,
@@ -36,6 +37,8 @@ export const Collection = ({
           <p className="p-20-semibold">Empty List</p>
         </div>
       )}
+
+      <Pager totalPages={totalPages} currentPage={page} />
     </>
   );
 };
