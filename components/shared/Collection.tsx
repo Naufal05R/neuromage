@@ -30,11 +30,6 @@ export const Collection = ({
   page: number;
   hasSearch?: boolean;
 }) => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  // PAGINATION HANDLER
-
   return (
     <>
       <div className="collection-heading">
