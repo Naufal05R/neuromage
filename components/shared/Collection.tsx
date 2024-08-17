@@ -34,17 +34,17 @@ export const Collection = ({
   const searchParams = useSearchParams();
 
   // PAGINATION HANDLER
-  // const onPageChange = (action: string) => {
-  //   const pageValue = action === "next" ? Number(page) + 1 : Number(page) - 1;
+  const onPageChange = (action: string) => {
+    const pageValue = action === "next" ? Number(page) + 1 : Number(page) - 1;
 
-  //   const newUrl = formUrlQuery({
-  //     searchParams: searchParams.toString(),
-  //     key: "page",
-  //     value: pageValue,
-  //   });
+    const newUrl = formUrlQuery({
+      searchParams: searchParams.toString(),
+      key: "page",
+      value: pageValue,
+    });
 
-  //   router.push(newUrl, { scroll: false });
-  // };
+    router.push(newUrl, { scroll: false });
+  };
 
   return (
     <>
@@ -64,8 +64,6 @@ export const Collection = ({
           <p className="p-20-semibold">Empty List</p>
         </div>
       )}
-
-      
     </>
   );
 };
