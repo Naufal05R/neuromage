@@ -38,7 +38,7 @@ export const Collection = ({
         </div>
       )}
 
-      <Pager totalPages={totalPages} currentPage={page} />
+      <Pager totalPages={totalPages} page={page} />
     </>
   );
 };
