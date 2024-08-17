@@ -1,10 +1,21 @@
 import React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { formUrlQuery } from "@/lib/utils";
-import { Pagination, PaginationContent, PaginationNext, PaginationPrevious } from "../ui/pagination";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationNext,
+  PaginationPrevious,
+} from "../ui/pagination";
 import { Button } from "../ui/button";
 
-const Pager = () => {
+const Pager = ({
+  currentPage: page,
+  totalPages,
+}: {
+  currentPage: string | number;
+  totalPages: number;
+}) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
