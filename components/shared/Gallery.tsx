@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Collection } from "./Collection";
 import { Search } from "./Search";
 import { getAllImages } from "@/lib/actions/image.actions";
+import { GalleryImageSkeleton } from "./Skeletons";
 
 const Gallery = ({
   page,
@@ -19,22 +20,7 @@ const Gallery = ({
         {hasSearch && <Search />}
       </div>
 
-      <Suspense
-        key={searchQuery + page}
-        fallback={
-          <ul className="collection-list">
-            {Array.from({ length: 10 }).map((_, index) => (
-              <li key={index} className="collection-card">
-                <div className="h-52 w-full rounded-[10px] bg-slate-400" />
-                <div className="flex-between">
-                  <div className="h-7 rounded-full bg-slate-400 odd:w-2/4 even:w-3/4"></div>
-                  <div className="flex-center h-6 w-6 rounded-full bg-slate-400" />
-                </div>
-              </li>
-            ))}
-          </ul>
-        }
-      >
+      <Suspense key={searchQuery + page} fallback={<GalleryImageSkeleton />}>
         <GalleryImage page={page} searchQuery={searchQuery} />
       </Suspense>
     </section>
