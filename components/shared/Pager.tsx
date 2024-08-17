@@ -1,11 +1,9 @@
+import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 
 const Pager = () => {
-  return (
-    <>
-      
-    </>
-  );
+  const router = useRouter();
+  const searchParams = useSearchParams();
 };
 
 export default Pager;
