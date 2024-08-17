@@ -22,7 +22,6 @@ const Gallery = async ({
       </div>
 
       <Collection
-        hasSearch
         images={images?.data}
         totalPages={images?.totalPages}
         page={page}
