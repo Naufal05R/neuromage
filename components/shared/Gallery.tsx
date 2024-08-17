@@ -7,16 +7,18 @@ import { GalleryImageSkeleton } from "./Skeletons";
 const Gallery = ({
   page,
   searchQuery,
+  heading,
   hasSearch = false,
 }: {
   page: number;
   searchQuery: string;
+  heading: string;
   hasSearch?: boolean;
 }) => {
   return (
     <section className="sm:mt-12">
       <div className="collection-heading">
-        <h2 className="h2-bold text-dark-600">Recent Edits</h2>
+        <h2 className="h2-bold text-dark-600">{heading}</h2>
         {hasSearch && <Search />}
       </div>
 
