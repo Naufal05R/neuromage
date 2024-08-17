@@ -31,18 +31,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
         </ul>
       </section>
 
-      <Suspense
-        key={searchQuery + page}
-        fallback={
-          <ul className="collection-list">
-            {Array.from({ length: 10 }).map((_, index) => (
-              <li key={index} className="collection-card" />
-            ))}
-          </ul>
-        }
-      >
-        <Gallery searchQuery={searchQuery} page={page} hasSearch />
-      </Suspense>
+      <Gallery searchQuery={searchQuery} page={page} hasSearch />
     </>
   );
 };
