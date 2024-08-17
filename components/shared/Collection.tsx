@@ -34,17 +34,6 @@ export const Collection = ({
   const searchParams = useSearchParams();
 
   // PAGINATION HANDLER
-  const onPageChange = (action: string) => {
-    const pageValue = action === "next" ? Number(page) + 1 : Number(page) - 1;
-
-    const newUrl = formUrlQuery({
-      searchParams: searchParams.toString(),
-      key: "page",
-      value: pageValue,
-    });
-
-    router.push(newUrl, { scroll: false });
-  };
 
   return (
     <>
