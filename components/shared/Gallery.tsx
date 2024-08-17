@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Collection } from "./Collection";
-import { getAllImages } from "@/lib/actions/image.actions";
 import { Search } from "./Search";
+import { getAllImages } from "@/lib/actions/image.actions";
 
 const Gallery = ({
   page,
