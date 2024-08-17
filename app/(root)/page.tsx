@@ -33,7 +33,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
         </ul>
       </section>
 
-      <Gallery />
+      <Gallery page={page} searchQuery={searchQuery} />
     </>
   );
 };
