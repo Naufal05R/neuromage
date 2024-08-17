@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Home = async ({ searchParams }: SearchParamProps) => {
+const Home = ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
   const searchQuery = (searchParams?.query as string) || "";
 
