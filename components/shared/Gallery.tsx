@@ -6,13 +6,13 @@ import { GalleryImageSkeleton } from "./Skeletons";
 
 const Gallery = ({
   page,
-  searchQuery,
   heading,
+  searchQuery = "",
   hasSearch = false,
 }: {
   page: number;
-  searchQuery: string;
   heading: string;
+  searchQuery?: string;
   hasSearch?: boolean;
 }) => {
   return (
