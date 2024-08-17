@@ -278,7 +278,7 @@
   }
 
   .collection-card {
-    @apply flex flex-1 cursor-pointer flex-col gap-5 rounded-[16px] border-2 border-blue-200/15 bg-white p-4 shadow-xl shadow-blue-200/10 transition-all hover:shadow-blue-200/20;
+    @apply flex flex-1 cursor-pointer flex-col gap-5 rounded-[16px] border-2 border-blue-200/15 bg-white p-4 shadow-xl shadow-blue-200/10 transition-shadow hover:shadow-blue-200/20;
   }
 
   /* MediaUploader Component */
