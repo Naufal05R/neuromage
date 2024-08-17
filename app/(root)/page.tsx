@@ -1,4 +1,5 @@
 import { Collection } from "@/components/shared/Collection";
+import Gallery from "@/components/shared/Gallery";
 import { navLinks } from "@/constants";
 import { getAllImages } from "@/lib/actions/image.actions";
 import Image from "next/image";
@@ -32,7 +33,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
         </ul>
       </section>
 
-
+      <Gallery />
     </>
   );
 };
