@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Collection } from "./Collection";
 import { getAllImages } from "@/lib/actions/image.actions";
 import { Search } from "./Search";
 
-const Gallery = async ({
+const Gallery = ({
   page,
   searchQuery,
   hasSearch = false,
@@ -12,8 +12,6 @@ const Gallery = async ({
   searchQuery: string;
   hasSearch?: boolean;
 }) => {
-  const images = await getAllImages({ page, searchQuery });
-
   return (
     <section className="sm:mt-12">
       <div className="collection-heading">
@@ -21,12 +19,25 @@ const Gallery = async ({
         {hasSearch && <Search />}
       </div>
 
-      <Collection
-        images={images?.data}
-        totalPages={images?.totalPages}
-        page={page}
-      />
+      <GalleryImage page={page} searchQuery={searchQuery} />
     </section>
+  );
+};
+
+const GalleryImage = async ({
+  page,
+  searchQuery,
+}: {
+  page: number;
+  searchQuery: string;
+}) => {
+  const images = await getAllImages({ page, searchQuery });
+  return (
+    <Collection
+      images={images?.data}
+      totalPages={images?.totalPages}
+      page={page}
+    />
   );
 };
 
