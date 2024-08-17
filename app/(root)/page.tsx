@@ -31,7 +31,12 @@ const Home = ({ searchParams }: SearchParamProps) => {
         </ul>
       </section>
 
-      <Gallery searchQuery={searchQuery} page={page} hasSearch />
+      <Gallery
+        searchQuery={searchQuery}
+        page={page}
+        heading="Recent Edits"
+        hasSearch
+      />
     </>
   );
 };
