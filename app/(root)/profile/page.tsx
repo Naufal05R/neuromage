@@ -3,9 +3,9 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 
 import Header from "@/components/shared/Header";
-import { Collection } from "@/components/shared/Collection";
 import { getUserImages } from "@/lib/actions/image.actions";
 import { getUserById } from "@/lib/actions/user.actions";
+import Gallery from "@/components/shared/Gallery";
 
 const ProfilePage = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
@@ -50,13 +50,10 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
         </div>
       </section>
 
-      <section className="mt-8 md:mt-14">
-        <Collection
-          images={images?.data}
-          totalPages={images?.totalPages}
-          page={page}
-        />
-      </section>
+      <Gallery
+        page={page}
+        heading="Your Collections"
+      />
     </>
   );
 };
