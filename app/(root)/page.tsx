@@ -16,7 +16,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
         </h1>
 
         <ul className="flex-center w-full gap-20">
-          {navLinks.slice(1, 5).map((link, index) => (
+          {navLinks.slice(1, 5).map((link) => (
             <Link
               key={link.route}
               href={link.route}
