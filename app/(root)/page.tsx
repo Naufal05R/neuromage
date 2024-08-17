@@ -1,10 +1,8 @@
-import { Collection } from "@/components/shared/Collection";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import Gallery from "@/components/shared/Gallery";
 import { navLinks } from "@/constants";
-import { getAllImages } from "@/lib/actions/image.actions";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 
 const Home = ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
