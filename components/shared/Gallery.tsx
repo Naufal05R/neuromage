@@ -19,7 +19,18 @@ const Gallery = ({
         {hasSearch && <Search />}
       </div>
 
-      <GalleryImage page={page} searchQuery={searchQuery} />
+      <Suspense
+        key={searchQuery + page}
+        fallback={
+          <ul className="collection-list">
+            {Array.from({ length: 10 }).map((_, index) => (
+              <li key={index} className="collection-card" />
+            ))}
+          </ul>
+        }
+      >
+        <GalleryImage page={page} searchQuery={searchQuery} />
+      </Suspense>
     </section>
   );
 };
