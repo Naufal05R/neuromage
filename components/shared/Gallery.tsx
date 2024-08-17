@@ -5,9 +5,11 @@ import { getAllImages } from "@/lib/actions/image.actions";
 const Gallery = async ({
   page,
   searchQuery,
+  hasSearch = false,
 }: {
   page: number;
   searchQuery: string;
+  hasSearch?: boolean;
 }) => {
   const images = await getAllImages({ page, searchQuery });
 
