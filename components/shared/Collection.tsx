@@ -7,11 +7,9 @@ import { CldImage } from "next-cloudinary";
 import { transformationTypes } from "@/constants";
 import { ImageInterface } from "@/lib/database/models/image.model";
 
-import { Search } from "./Search";
 import Pager from "./Pager";
 
 export const Collection = ({
-  hasSearch = false,
   images,
   totalPages = 1,
   page,
@@ -19,7 +17,6 @@ export const Collection = ({
   images: ImageInterface[];
   totalPages?: number;
   page: number;
-  hasSearch?: boolean;
 }) => {
   return (
     <>
