@@ -34,17 +34,17 @@ export const Collection = ({
   const searchParams = useSearchParams();
 
   // PAGINATION HANDLER
-  const onPageChange = (action: string) => {
-    const pageValue = action === "next" ? Number(page) + 1 : Number(page) - 1;
+  // const onPageChange = (action: string) => {
+  //   const pageValue = action === "next" ? Number(page) + 1 : Number(page) - 1;
 
-    const newUrl = formUrlQuery({
-      searchParams: searchParams.toString(),
-      key: "page",
-      value: pageValue,
-    });
+  //   const newUrl = formUrlQuery({
+  //     searchParams: searchParams.toString(),
+  //     key: "page",
+  //     value: pageValue,
+  //   });
 
-    router.push(newUrl, { scroll: false });
-  };
+  //   router.push(newUrl, { scroll: false });
+  // };
 
   return (
     <>
@@ -65,31 +65,7 @@ export const Collection = ({
         </div>
       )}
 
-      {totalPages > 1 && (
-        <Pagination className="mt-10">
-          <PaginationContent className="flex w-full">
-            <Button
-              disabled={Number(page) <= 1}
-              className="collection-btn"
-              onClick={() => onPageChange("prev")}
-            >
-              <PaginationPrevious className="hover:bg-transparent hover:text-white" />
-            </Button>
-
-            <p className="flex-center p-16-medium w-fit flex-1">
-              {page} / {totalPages}
-            </p>
-
-            <Button
-              className="button w-32 bg-gradient-sky-blue bg-cover text-white"
-              onClick={() => onPageChange("next")}
-              disabled={Number(page) >= totalPages}
-            >
-              <PaginationNext className="hover:bg-transparent hover:text-white" />
-            </Button>
-          </PaginationContent>
-        </Pagination>
-      )}
+      
     </>
   );
 };
