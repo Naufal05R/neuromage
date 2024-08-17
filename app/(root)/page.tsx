@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Gallery from "@/components/shared/Gallery";
@@ -31,7 +31,9 @@ const Home = ({ searchParams }: SearchParamProps) => {
         </ul>
       </section>
 
-      <Gallery page={page} searchQuery={searchQuery} />
+      <Suspense>
+        <Gallery searchQuery={searchQuery} page={page} />
+      </Suspense>
     </>
   );
 };
