@@ -1,7 +1,7 @@
 import React from "react";
 import { Collection } from "./Collection";
 
-const Gallery = () => {
+const Gallery = async () => {
   return (
     <section className="sm:mt-12">
       <Collection
