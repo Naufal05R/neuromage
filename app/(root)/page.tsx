@@ -31,7 +31,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
         </ul>
       </section>
 
-      <Suspense>
+      <Suspense key={searchQuery + page} fallback={<>Loading...</>}>
         <Gallery searchQuery={searchQuery} page={page} />
       </Suspense>
     </>
