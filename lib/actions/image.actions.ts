@@ -7,6 +7,7 @@ import { connectToDatabase } from "../database/mongoose";
 import { handleError } from "../utils";
 import { redirect } from "next/navigation";
 import { v2 as cloudinary } from "cloudinary";
+import { MAX_IMAGES_PER_PAGE } from "@/constants";
 
 const populateUser = (query: any) =>
   query.populate({
