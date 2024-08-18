@@ -92,7 +92,7 @@ export async function getImageById(imageId: string) {
 
 // GET ALL IMAGES
 export async function getAllImages({
-  limit = 9,
+  limit = MAX_IMAGES_PER_PAGE,
   page = 1,
   searchQuery = "",
 }: {
@@ -154,7 +154,7 @@ export async function getAllImages({
 
 // GET IMAGES BY USER
 export async function getUserImages({
-  limit = 9,
+  limit = MAX_IMAGES_PER_PAGE,
   page = 1,
   userId,
 }: {
