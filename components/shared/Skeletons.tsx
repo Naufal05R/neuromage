@@ -1,7 +1,7 @@
 export const GalleryImageSkeleton = () => {
   return (
     <ul className="collection-list">
-      {Array.from({ length: 10 }).map((_, index) => (
+      {Array.from({ length: 9 }).map((_, index) => (
         <li
           key={index}
           className="collection-card before:animate-shimmer relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:from-20% before:via-slate-400/20 before:to-80% before:to-transparent"
