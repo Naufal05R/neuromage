@@ -1,3 +1,5 @@
+export const MAX_IMAGES_PER_PAGE = 9;
+
 export const navLinks = [
   {
     label: "Home",
