@@ -1,4 +1,4 @@
-import { MAX_IMAGES_PER_PAGE } from "@/lib/actions/image.actions";
+import { MAX_IMAGES_PER_PAGE } from "@/constants";
 
 export const GalleryImageSkeleton = () => {
   return (
