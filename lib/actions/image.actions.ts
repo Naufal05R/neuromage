@@ -15,6 +15,8 @@ const populateUser = (query: any) =>
     select: "_id firstName lastName clerkId",
   });
 
+export const MAX_IMAGES_PER_PAGE = 9;
+
 // ADD IMAGE
 export async function addImage({ image, userId, path }: AddImageParams) {
   try {
