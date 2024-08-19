@@ -7,7 +7,6 @@ import { getUserById } from "@/lib/actions/user.actions";
 import Gallery from "@/components/shared/Gallery";
 import Header from "@/components/shared/Header";
 import { Suspense } from "react";
-import Loading from "./loading";
 import { ProfileInformationSkeleton } from "@/components/shared/Skeletons";
 
 const ProfilePage = ({ searchParams }: SearchParamProps) => {
