@@ -6,7 +6,7 @@ export const GalleryImageSkeleton = () => {
       {Array.from({ length: MAX_IMAGES_PER_PAGE }).map((_, index) => (
         <li
           key={index}
-          className="collection-card before:animate-shimmer relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:from-20% before:via-slate-400/20 before:to-80% before:to-transparent"
+          className="collection-card relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:from-20% before:via-slate-400/20 before:to-transparent before:to-80%"
         >
           <div className="h-52 w-full rounded-[10px] bg-slate-400/20" />
           <div className="flex-between">
@@ -20,5 +20,35 @@ export const GalleryImageSkeleton = () => {
 };
 
 export const ProfileInformationSkeleton = () => {
-  return 
-}
+  return (
+    <section className="profile">
+      <div className="profile-balance">
+        <p className="p-14-medium md:p-16-medium">CREDITS AVAILABLE</p>
+        <div className="mt-4 flex items-center gap-4">
+          <Image
+            src="/assets/icons/coins.svg"
+            alt="coins"
+            width={50}
+            height={50}
+            className="size-9 md:size-12"
+          />
+          <div className="h-[39px] w-16 rounded-full bg-slate-400" />
+        </div>
+      </div>
+
+      <div className="profile-image-manipulation">
+        <p className="p-14-medium md:p-16-medium">IMAGE MANIPULATION DONE</p>
+        <div className="mt-4 flex items-center gap-4">
+          <Image
+            src="/assets/icons/photo.svg"
+            alt="coins"
+            width={50}
+            height={50}
+            className="size-9 md:size-12"
+          />
+          <div className="h-[39px] w-12 rounded-full bg-slate-400" />
+        </div>
+      </div>
+    </section>
+  );
+};
