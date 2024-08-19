@@ -8,6 +8,7 @@ import Gallery from "@/components/shared/Gallery";
 import Header from "@/components/shared/Header";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { ProfileInformationSkeleton } from "@/components/shared/Skeletons";
 
 const ProfilePage = ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
@@ -19,7 +20,7 @@ const ProfilePage = ({ searchParams }: SearchParamProps) => {
     <>
       <Header title="Profile" />
 
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<ProfileInformationSkeleton />}>
         <ProfileInformation userId={userId} page={page} />
       </Suspense>
 
