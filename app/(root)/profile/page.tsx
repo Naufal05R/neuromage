@@ -56,9 +56,10 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
 };
 
 const UserData = async (): Promise<React.ReactNode> => {
-  return (
-    <></>
-  );
+  const user = await getUserById(userId);
+  const images = await getUserImages({ page, userId: user._id });
+
+  return <h2 className="h2-bold text-dark-600">{user.creditBalance}</h2>;
 };
 
 export default ProfilePage;
