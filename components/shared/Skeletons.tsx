@@ -27,7 +27,13 @@ export const ProfileInformationSkeleton = () => {
   return (
     <ul className="profile">
       {Array.from({ length: 2 }).map((_, index) => (
-        <li key={index} className={cn("profile-card_information")}>
+        <li
+          key={index}
+          className={cn(
+            "profile-card_information",
+            "relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:from-20% before:via-slate-400/20 before:to-transparent before:to-80%",
+          )}
+        >
           <div className="h-[22px] w-full rounded-full bg-slate-400/20" />
           <div className="mt-4 flex items-center gap-4">
             <div className="size-9 rounded-full bg-slate-400/20 md:size-12" />
