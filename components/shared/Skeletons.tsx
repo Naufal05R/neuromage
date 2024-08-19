@@ -1,4 +1,5 @@
 import { MAX_IMAGES_PER_PAGE } from "@/constants";
+import { cn } from "@/lib/utils";
 
 export const GalleryImageSkeleton = () => {
   return (
@@ -6,7 +7,10 @@ export const GalleryImageSkeleton = () => {
       {Array.from({ length: MAX_IMAGES_PER_PAGE }).map((_, index) => (
         <li
           key={index}
-          className="collection-card relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:from-20% before:via-slate-400/20 before:to-transparent before:to-80%"
+          className={cn(
+            "collection-card",
+            "relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:from-20% before:via-slate-400/20 before:to-transparent before:to-80%",
+          )}
         >
           <div className="h-52 w-full rounded-[10px] bg-slate-400/20" />
           <div className="flex-between">
@@ -21,16 +25,16 @@ export const GalleryImageSkeleton = () => {
 
 export const ProfileInformationSkeleton = () => {
   return (
-    <section className="profile">
+    <ul className="profile">
       {Array.from({ length: 2 }).map((_, index) => (
-        <div key={index} className="profile-information_card">
+        <li key={index} className="profile-information_card">
           <div className="h-[22px] w-full rounded-full bg-slate-400/20" />
           <div className="mt-4 flex items-center gap-4">
             <div className="size-9 rounded-full bg-slate-400/20 md:size-12" />
             <div className="h-[39px] w-2/3 rounded-full bg-slate-400/20" />
           </div>
-        </div>
+        </li>
       ))}
-    </section>
+    </ul>
   );
 };
