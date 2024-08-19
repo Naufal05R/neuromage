@@ -50,12 +50,11 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
         </div>
       </section>
 
-      <Gallery
-        page={page}
-        heading="Your Collections"
-      />
+      <Gallery page={page} heading="Your Collections" />
     </>
   );
 };
+
+const UserData = (): React.ReactNode => <></>;
 
 export default ProfilePage;
