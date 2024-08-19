@@ -40,7 +40,7 @@ const ProfileInformation = async ({
 
   return (
     <section className="profile">
-      <div className="profile-balance">
+      <div className="profile-card_information">
         <p className="p-14-medium md:p-16-medium">CREDITS AVAILABLE</p>
         <div className="mt-4 flex items-center gap-4">
           <Image
@@ -54,7 +54,7 @@ const ProfileInformation = async ({
         </div>
       </div>
 
-      <div className="profile-image-manipulation">
+      <div className="profile-card_information">
         <p className="p-14-medium md:p-16-medium">IMAGE MANIPULATION DONE</p>
         <div className="mt-4 flex items-center gap-4">
           <Image
