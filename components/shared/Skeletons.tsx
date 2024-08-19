@@ -27,7 +27,7 @@ export const ProfileInformationSkeleton = () => {
   return (
     <ul className="profile">
       {Array.from({ length: 2 }).map((_, index) => (
-        <li key={index} className="profile-card_information">
+        <li key={index} className={cn("profile-card_information")}>
           <div className="h-[22px] w-full rounded-full bg-slate-400/20" />
           <div className="mt-4 flex items-center gap-4">
             <div className="size-9 rounded-full bg-slate-400/20 md:size-12" />
