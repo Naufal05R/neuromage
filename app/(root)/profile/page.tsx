@@ -5,8 +5,11 @@ import { redirect } from "next/navigation";
 import { getUserImages } from "@/lib/actions/image.actions";
 import { getUserById } from "@/lib/actions/user.actions";
 import Gallery from "@/components/shared/Gallery";
+import Header from "@/components/shared/Header";
+import { Suspense } from "react";
+import Loading from "./loading";
 
-const ProfilePage = async ({ searchParams }: SearchParamProps) => {
+const ProfilePage = ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
   const { userId } = auth();
 
@@ -14,7 +17,11 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
-      <ProfileInformation userId={userId} page={page} />
+      <Header title="Profile" />
+
+      <Suspense fallback={<Loading />}>
+        <ProfileInformation userId={userId} page={page} />
+      </Suspense>
 
       <Gallery page={page} heading="Your Collections" />
     </>
