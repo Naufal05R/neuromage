@@ -55,6 +55,10 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
   );
 };
 
-const UserData = (): React.ReactNode => <></>;
+const UserData = async (): Promise<React.ReactNode> => {
+  return (
+    <></>
+  );
+};
 
 export default ProfilePage;
