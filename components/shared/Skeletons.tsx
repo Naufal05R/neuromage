@@ -22,21 +22,15 @@ export const GalleryImageSkeleton = () => {
 export const ProfileInformationSkeleton = () => {
   return (
     <section className="profile">
-      <div className="profile-balance">
-        <p className="p-14-medium md:p-16-medium">CREDITS AVAILABLE</p>
-        <div className="mt-4 flex items-center gap-4">
-          <div className="size-9 rounded-full md:size-12" />
-          <div className="h-[39px] w-16 rounded-full bg-slate-400" />
+      {Array.from({ length: 2 }).map((_, index) => (
+        <div key={index} className="profile-information_card">
+          <div className="h-[22px] w-full rounded-full bg-slate-400/20" />
+          <div className="mt-4 flex items-center gap-4">
+            <div className="size-9 rounded-full bg-slate-400/20 md:size-12" />
+            <div className="h-[39px] w-2/3 rounded-full bg-slate-400/20" />
+          </div>
         </div>
-      </div>
-
-      <div className="profile-image-manipulation">
-        <p className="p-14-medium md:p-16-medium">IMAGE MANIPULATION DONE</p>
-        <div className="mt-4 flex items-center gap-4">
-          <div className="size-9 rounded-full md:size-12" />
-          <div className="h-[39px] w-12 rounded-full bg-slate-400" />
-        </div>
-      </div>
+      ))}
     </section>
   );
 };
