@@ -18,3 +18,7 @@ export const GalleryImageSkeleton = () => {
     </ul>
   );
 };
+
+export const ProfileInformationSkeleton = () => {
+  return 
+}
