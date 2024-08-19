@@ -63,3 +63,137 @@ export const ProfileInformationSkeleton = () => {
     </ul>
   );
 };
+
+export default function AddTransformationTypeSkeleton({
+  type,
+}: {
+  type: TransformationTypeKey;
+}) {
+  return (
+    <div className="mt-10">
+      <div className="space-y-8">
+        <div className="space-y-2">
+          <label
+            className={cn(
+              "block w-fit rounded-full bg-slate-400/20 text-transparent",
+              skeleton,
+            )}
+          >
+            Static Label
+          </label>
+          <div
+            className={cn(
+              "mt-2 h-[54px] rounded-2xl bg-slate-400/20",
+              skeleton,
+            )}
+          />
+        </div>
+
+        {(type === "fill" || type === "remove") && (
+          <div className="space-y-2">
+            <label
+              className={cn(
+                "block w-fit rounded-full bg-slate-400/20 text-transparent",
+                skeleton,
+              )}
+            >
+              Static Label
+            </label>
+            <div
+              className={cn(
+                "mt-2 h-[54px] rounded-2xl bg-slate-400/20",
+                skeleton,
+              )}
+            />
+          </div>
+        )}
+
+        {type === "recolor" && (
+          <div className="prompt-field">
+            <div className="space-y-2 w-full">
+              <label
+                className={cn(
+                  "block w-fit rounded-full bg-slate-400/20 text-transparent",
+                  skeleton,
+                )}
+              >
+                Static Label
+              </label>
+              <div
+                className={cn(
+                  "mt-2 h-[54px] rounded-2xl bg-slate-400/20",
+                  skeleton,
+                )}
+              />
+            </div>
+            <div className="space-y-2 w-full">
+              <label
+                className={cn(
+                  "block w-fit rounded-full bg-slate-400/20 text-transparent",
+                  skeleton,
+                )}
+              >
+                Static Label
+              </label>
+              <div
+                className={cn(
+                  "mt-2 h-[54px] rounded-2xl bg-slate-400/20",
+                  skeleton,
+                )}
+              />
+            </div>
+          </div>
+        )}
+
+        <div className="media-uploader-field">
+          <div className="flex size-full flex-col space-y-2">
+            <div className="flex flex-col gap-4">
+              <div
+                className={cn(
+                  "h-[42px] w-1/2 rounded-full bg-slate-400/20",
+                  skeleton,
+                )}
+              />
+              <div
+                className={cn(
+                  "flex-center flex h-72 cursor-pointer flex-col gap-5 rounded-2xl bg-slate-400/20",
+                  skeleton,
+                )}
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <div
+              className={cn(
+                "h-[42px] w-1/2 rounded-full bg-slate-400/20",
+                skeleton,
+              )}
+            />
+            <div
+              className={cn(
+                "flex-center flex h-72 cursor-pointer flex-col gap-5 rounded-2xl bg-slate-400/20",
+                skeleton,
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <div
+            className={cn(
+              "h-[54px] w-full rounded-full bg-slate-400/20",
+              skeleton,
+            )}
+          />
+          <div
+            className={cn(
+              "h-[54px] w-full rounded-full bg-slate-400/20",
+              skeleton,
+            )}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
