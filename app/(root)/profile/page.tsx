@@ -52,4 +52,8 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
   );
 };
 
+const ProfileInformation = () => {
+  return <></>;
+};
+
 export default ProfilePage;
