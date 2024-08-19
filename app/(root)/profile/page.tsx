@@ -52,7 +52,10 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
   );
 };
 
-const ProfileInformation = () => {
+const ProfileInformation = async () => {
+  const user = await getUserById(userId);
+  const images = await getUserImages({ page, userId: user._id });
+
   return <></>;
 };
 
