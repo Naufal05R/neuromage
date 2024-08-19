@@ -25,13 +25,7 @@ export const ProfileInformationSkeleton = () => {
       <div className="profile-balance">
         <p className="p-14-medium md:p-16-medium">CREDITS AVAILABLE</p>
         <div className="mt-4 flex items-center gap-4">
-          <Image
-            src="/assets/icons/coins.svg"
-            alt="coins"
-            width={50}
-            height={50}
-            className="size-9 md:size-12"
-          />
+          <div className="size-9 rounded-full md:size-12" />
           <div className="h-[39px] w-16 rounded-full bg-slate-400" />
         </div>
       </div>
@@ -39,13 +33,7 @@ export const ProfileInformationSkeleton = () => {
       <div className="profile-image-manipulation">
         <p className="p-14-medium md:p-16-medium">IMAGE MANIPULATION DONE</p>
         <div className="mt-4 flex items-center gap-4">
-          <Image
-            src="/assets/icons/photo.svg"
-            alt="coins"
-            width={50}
-            height={50}
-            className="size-9 md:size-12"
-          />
+          <div className="size-9 rounded-full md:size-12" />
           <div className="h-[39px] w-12 rounded-full bg-slate-400" />
         </div>
       </div>
