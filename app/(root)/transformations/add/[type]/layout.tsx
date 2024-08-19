@@ -8,7 +8,8 @@ export default function AddTransformationTypeLayout({
   params: { type },
 }: {
   children: React.ReactNode;
-} & SearchParamProps) {
+  params: { type: TransformationTypeKey };
+}) {
   const transformation = transformationTypes[type];
 
   return (
