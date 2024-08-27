@@ -45,7 +45,7 @@ const Checkout = ({
         className: "error-toast",
       });
     }
-  }, []);
+  });
 
   const onCheckout = async () => {
     const transaction = {
