@@ -48,6 +48,7 @@ const Checkout = ({
   });
 
   const onCheckout = async () => {
+    
     const transaction = {
       plan,
       amount,
