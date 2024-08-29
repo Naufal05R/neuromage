@@ -6,6 +6,7 @@ export const navLinks = [
     route: "/",
     icon: "/assets/icons/home.svg",
   },
+  
   {
     label: "Image Restore",
     route: "/transformations/add/restore",
