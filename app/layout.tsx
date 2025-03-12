@@ -11,8 +11,11 @@ const IBM_PLEX_SANS = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Neuromage",
-  description: "Neural Network Image Generator",
+  title: {
+    template: "Neuromage | %s",
+    default: "Neuromage",
+  },
+  description: "Transform images effortlessly with AI-powered tools. Restore old photos, remove objects, fill missing parts, and remove backgrounds with precision. Try our advanced AI canvas editor today! 🚀",
 };
 
 export default function RootLayout({
