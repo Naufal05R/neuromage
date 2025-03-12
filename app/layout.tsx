@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "Neuromage | %s",
     default: "Neuromage",
   },
-  description: "Transform images effortlessly with AI-powered tools. Restore old photos, remove objects, fill missing parts, and remove backgrounds with precision. Try our advanced AI canvas editor today! 🚀",
+  description: "Transform images effortlessly with AI-powered tools. Restore old photos, remove objects, fill missing parts, and remove backgrounds with precision.",
 };
 
 export default function RootLayout({
