@@ -16,11 +16,23 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://www.notion.so https://*.notion.so",
+            value: "frame-ancestors *",
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, PUT, DELETE, OPTIONS',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: '*',
           },
           {
             key: 'X-Frame-Options',
-            value: 'ALLOW-FROM https://www.notion.so',
+            value: 'ALLOWALL',
           },
         ],
       },
