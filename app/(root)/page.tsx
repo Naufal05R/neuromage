@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Gallery from "@/components/shared/Gallery";
 import { navLinks } from "@/constants";
+
+export const metadata: Metadata = {
+  title: "AI-Powered Image Editing | Restore, Remove, & Enhance with Ease",
+};
 
 const Home = ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
