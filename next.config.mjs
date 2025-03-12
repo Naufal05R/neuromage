@@ -9,6 +9,23 @@ const nextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self' https://www.notion.so https://*.notion.so",
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'ALLOW-FROM https://www.notion.so',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
