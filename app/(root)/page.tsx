@@ -6,7 +6,7 @@ import Gallery from "@/components/shared/Gallery";
 import { navLinks } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "AI-Powered Image Editing | Restore, Remove, & Enhance with Ease",
+  title: "AI-Powered Image Editing",
 };
 
 const Home = ({ searchParams }: SearchParamProps) => {
