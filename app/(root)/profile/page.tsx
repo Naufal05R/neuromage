@@ -6,12 +6,13 @@ import { getUserImages } from "@/lib/actions/image.actions";
 import { getUserById } from "@/lib/actions/user.actions";
 import Gallery from "@/components/shared/Gallery";
 import Header from "@/components/shared/Header";
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 import { ProfileInformationSkeleton } from "@/components/shared/Skeletons";
 
-const ProfilePage = ({ searchParams }: SearchParamProps) => {
+const ProfilePage = async ({ ...props }: SearchParamProps) => {
+  const searchParams = use(props.searchParams);
   const page = Number(searchParams?.page) || 1;
-  const { userId } = auth();
+  const { userId } = await auth();
 
   if (!userId) redirect("/sign-in");
 
