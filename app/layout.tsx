@@ -34,7 +34,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "font-IBM_PLEX_SANS antialiased",
+            "font-[family-name:var(--font-ibm-plex-sans)] antialiased",
             IBM_PLEX_SANS.variable,
           )}
         >
