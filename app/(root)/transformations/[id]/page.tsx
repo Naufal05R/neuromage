@@ -9,8 +9,9 @@ import { getImageById } from "@/lib/actions/image.actions";
 import { getImageSize } from "@/lib/utils";
 import { DeleteConfirmation } from "@/components/shared/DeleteConfirmation";
 
-const TransformationsDetailPage = async ({ params: { id } }: SearchParamProps) => {
-  const { userId } = auth();
+const TransformationsDetailPage = async ({ params }: SearchParamProps) => {
+  const { id } = await params;
+  const { userId } = await auth();
 
   const image = await getImageById(id);
 
@@ -21,9 +22,7 @@ const TransformationsDetailPage = async ({ params: { id } }: SearchParamProps) =
       <section className="mt-5 flex flex-wrap gap-4">
         <div className="p-14-medium md:p-16-medium flex gap-2">
           <p className="text-dark-600">Transformation:</p>
-          <p className="capitalize text-blue-400">
-            {image.transformationType}
-          </p>
+          <p className="capitalize text-blue-400">{image.transformationType}</p>
         </div>
 
         {image.prompt && (
@@ -59,7 +58,6 @@ const TransformationsDetailPage = async ({ params: { id } }: SearchParamProps) =
 
       <section className="mt-10 border-t border-dark-400/15">
         <div className="transformation-grid">
-          {/* MEDIA UPLOADER */}
           <div className="flex flex-col gap-4">
             <h3 className="h3-bold text-dark-600">Original</h3>
 
@@ -72,7 +70,6 @@ const TransformationsDetailPage = async ({ params: { id } }: SearchParamProps) =
             />
           </div>
 
-          {/* TRANSFORMED IMAGE */}
           <TransformedImage
             image={image}
             type={image.transformationType}
