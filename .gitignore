@@ -28,6 +28,11 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# Lock files
+yarn.lock
+package-lock.json
+bun.lockb
+
 # vercel
 .vercel
 
