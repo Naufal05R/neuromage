@@ -10,8 +10,8 @@ import { plans } from "@/constants";
 import { getUserById } from "@/lib/actions/user.actions";
 import { Suspense } from "react";
 
-const Credits = () => {
-  const { userId } = auth();
+const Credits = async () => {
+  const { userId } = await auth();
 
   if (!userId) redirect("/sign-in");
 
