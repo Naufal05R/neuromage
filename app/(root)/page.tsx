@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import React from "react";
+import React, { use } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Gallery from "@/components/shared/Gallery";
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   title: "AI-Powered Image Editing",
 };
 
-const Home = ({ searchParams }: SearchParamProps) => {
+const Home = ({ ...props }: SearchParamProps) => {
+  const searchParams = use(props.searchParams);
   const page = Number(searchParams?.page) || 1;
   const searchQuery = (searchParams?.query as string) || "";
 
