@@ -1,15 +1,15 @@
 import Header from "@/components/shared/Header";
 import AddTransformationTypeSkeleton from "@/components/shared/Skeletons";
 import { transformationTypes } from "@/constants";
-import { Suspense } from "react";
+import { Suspense, use } from "react";
+
+interface Props extends React.PropsWithChildren, SearchParamProps {}
 
 export default function AddTransformationTypeLayout({
   children,
-  params: { type },
-}: {
-  children: React.ReactNode;
-  params: { type: TransformationTypeKey };
-}) {
+  params,
+}: Props) {
+  const { type } = use(params);
   const transformation = transformationTypes[type];
 
   return (
