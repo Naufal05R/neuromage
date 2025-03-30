@@ -10,7 +10,7 @@ import { Suspense, use } from "react";
 import { ProfileInformationSkeleton } from "@/components/shared/Skeletons";
 
 const ProfilePage = async ({ ...props }: SearchParamProps) => {
-  const searchParams = use(props.searchParams);
+  const searchParams = await props.searchParams;
   const page = Number(searchParams?.page) || 1;
   const { userId } = await auth();
 
