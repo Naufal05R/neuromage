@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     template: "Neuromage | %s",
     default: "Neuromage",
   },
-  description: "Transform images effortlessly with AI-powered tools. Restore old photos, remove objects, fill missing parts, and remove backgrounds with precision.",
+  description:
+    "Transform images effortlessly with AI-powered tools. Restore old photos, remove objects, fill missing parts, and remove backgrounds with precision.",
 };
 
 export default function RootLayout({
@@ -24,23 +25,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider
-      appearance={{
-        variables: {
-          colorPrimary: "#3b82f6",
-        },
-      }}
-    >
-      <html lang="en">
-        <body
-          className={cn(
-            "font-[family-name:var(--font-ibm-plex-sans)] antialiased",
-            IBM_PLEX_SANS.variable,
-          )}
+    <html lang="en">
+      <body
+        className={cn(
+          "font-[family-name:var(--font-ibm-plex-sans)] antialiased",
+          IBM_PLEX_SANS.variable,
+        )}
+      >
+        <ClerkProvider
+          appearance={{
+            variables: {
+              colorPrimary: "#3b82f6",
+            },
+          }}
         >
           {children}
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
