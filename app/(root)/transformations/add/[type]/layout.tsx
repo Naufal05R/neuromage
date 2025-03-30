@@ -1,9 +1,11 @@
 import Header from "@/components/shared/Header";
 import AddTransformationTypeSkeleton from "@/components/shared/Skeletons";
 import { transformationTypes } from "@/constants";
-import { Suspense, use } from "react";
+import React, { Suspense, use } from "react";
 
-interface Props extends React.PropsWithChildren, SearchParamProps {}
+interface Props
+  extends React.PropsWithChildren,
+    Pick<SearchParamProps, "params"> {}
 
 export default function AddTransformationTypeLayout({
   children,
